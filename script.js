@@ -4,6 +4,8 @@ const operation = document.getElementById('operation');
 const result = document.getElementById('result');
 const playerInput = document.getElementById('playerInput');
 const inputForm = document.getElementById('inputForm');
+const correctSound = document.getElementById('correct');
+const worngSound = document.getElementById('wrong');
 const levelButtons = document.querySelectorAll('.level');
 const operations = ['+','-','&times;'];
 
@@ -51,9 +53,11 @@ inputForm.addEventListener('submit', (e)=>{
     _result = calculation(number1,number2,_operation)
     if(+playerInputValue === _result){
         result.style.borderColor = 'green'
+        correctSound.play()
     }
     else{
         result.style.borderColor = 'red'
+        worngSound.play()
     } 
 
     result.innerHTML = _result

@@ -14,15 +14,19 @@ body{
     padding: 1rem;
 }
 .container{
-    height: 40%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 4rem;
+    gap: 1rem;
+}
+@media (min-width: 768px){
+    .container{
+        height: calc(100% - 200px);
+    }
 }
 h2{
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
 
 #mathProblem,#levels{
@@ -43,7 +47,7 @@ h2{
     align-items: center;
 }
 #levels{
-    margin-top: 1rem;
+    margin-block: 1rem;
     /* font-size: 18px; */
     gap:0.5rem;
     flex-wrap: wrap;
