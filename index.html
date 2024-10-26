@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,11 +8,11 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
+
 <body>
 
     <h2>Choose a Level</h2>
     <div id="levels">
-        <div class="level">0</div> 
         <div class="level">1</div>
         <div class="level">2</div>
         <div class="level">3</div>
@@ -22,22 +23,31 @@
         <div class="level">8</div>
         <div class="level">9</div>
         <div class="level">10</div>
+        <div class="level">1-5</div>
+        <div class="level">6-10</div>
     </div>
 
     <div class="container">
-        <h2>Problem</h2>
+        <div id="resultTable">
+            <p>Correct : <span id="true"></span></p>
+            <p>Total : <span id="total"></span></p>
+            <p>Wrong : <span id="false"></span></p>
+        </div>
         <div id="mathProblem">
-        <div id="num1"></div>
-        <div id="operation"></div>
-        <div id="num2"></div>
-        <div id="equal">=</div>
-        <div id="result">?</div>
+            <div id="num1"></div>
+            <div id="operation"></div>
+            <div id="num2"></div>
+            <div id="equal">=</div>
+            <div id="result">?</div>
+        </div>
+        <form id="inputForm">
+            <input type="number" id="playerInput">
+        </form>
     </div>
-    <form id="inputForm">
-        <input type="number" id="playerInput">
-        <audio id="correct" src="correct.mp3"></audio>
-        <audio id="wrong" src="wrong.mp3"></audio>
-    </form>
-   </div>
+    <audio id="correct" src="correct.mp3"></audio>
+    <audio id="wrong" src="wrong.mp3"></audio>
+    <audio id="winerSound" src="winer.mp3"></audio>
+    <audio id="loserSound" src="loser.mp3"></audio>
 </body>
+
 </html>

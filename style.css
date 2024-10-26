@@ -22,15 +22,17 @@ body{
 }
 @media (min-width: 768px){
     .container{
-        height: calc(100% - 200px);
+        height: calc(100% - 500px);
     }
 }
 h2{
     margin-top: 1rem;
 }
 
+
+
 #mathProblem,#levels{
-    font-size: 32px;
+    font-size: 28px;
     display: flex;
     justify-content: center;
     gap: 1rem;
@@ -39,18 +41,22 @@ h2{
 
 
 #mathProblem > div:not(#equal),.level{
-    width: 50px;
+    min-width: 50px;
     height: 50px;
-    border: 2px solid #778899;
+    padding-inline: 0.5rem;
+    border: 2px solid #555;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 #levels{
-    margin-block: 1rem;
+    
     /* font-size: 18px; */
+    width: 240px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     gap:0.5rem;
-    flex-wrap: wrap;
+    margin: 1rem auto;
 }
 .level{
     border-color: #555;
@@ -59,24 +65,59 @@ h2{
     /* width: 30px;
     height: 30px; */
     cursor: pointer;
+    animation: anim 1s  infinite linear;
+}
+@keyframes anim {
+    0%{
+        border-color:#555;
+    }
+    50%{
+        border-color:white;
+    }
+    0%{
+        border-color:#555;
+    }
 }
 .level:hover,.apply{
     background-color: white;
 }
-#inputForm{
+#resultTable{
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
 }
-
+#resultTable p{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 12px;
+    font-weight: 600;
+}
+#resultTable p span{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #555;
+    color: white;
+}
+#true{
+    color: rgb(0, 128, 79);
+}
+#false{
+    color: rgb(255, 30, 0);
+}
 #playerInput{
     width: 75px;
     height: 50px;
     font-size: 32px;
     padding: 1rem;
-    /* border: 2px solid green; */
-    background-color: #444;
+    border: 2px solid lightskyblue;
+    background-color: #555;
     outline-color: #333;
     color: white;
+    text-align: center;
 }
 
 /* Chrome, Safari, Edge, Opera */
