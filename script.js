@@ -27,16 +27,33 @@ const randomNumber = (x)=>{
     return Math.round(Math.random() * x) 
 }
 
-let number1 = '...', number2,_operation = '&times;',_result,playerInputValue
+let number1, number2,_operation = '&times;',_result,playerInputValue,buttonContent,lastNum2
 const reset = ()=>{
-    number2 = randomNumber(10);
+    number1 = '...'
     num1.innerHTML = number1
+    while(lastNum2 === number2){
+        number2 = randomNumber(10);
+    }
+    lastNum2 = number2
     num2.innerHTML = number2
     operation.innerHTML = _operation
     result.innerHTML = '?'
     result.style.borderColor='#555'
     playerInput.focus()
     playerInput.value = null
+
+    if(buttonContent === undefined) return
+    switch(buttonContent){
+        case '1-5': number1 = randomNumber(5)
+        break;
+        case '6-10':
+            x = randomNumber(10)
+            number1 = x > 5 ? x : x + 5
+            break;
+        default: number1 = Number(buttonContent)
+        break;
+    }
+    num1.innerHTML = number1
 }
 reset();
 
@@ -102,18 +119,7 @@ levelButtons.forEach((button)=>{
             b.style.animation = 'none'
         });
         button.classList.add('apply');
-        const buttonContent = button.textContent
-        switch(buttonContent){
-            case '1-5': number1 = randomNumber(5)
-            break;
-            case '6-10':
-                const x = randomNumber(10)
-                number1 = x > 5 ? x : x + 5
-                break;
-            default: number1 = Number(buttonContent)
-            break;
-        }
-        num1.innerHTML = number1
+        buttonContent = button.textContent
         playerInput.removeAttribute('disabled')
         reset();
     })
