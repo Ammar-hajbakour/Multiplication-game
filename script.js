@@ -39,6 +39,7 @@ const reset = ()=>{
     operation.innerHTML = _operation
     result.innerHTML = '?'
     result.style.borderColor='#555'
+    result.style.backgroundColor = 'transparent'
     playerInput.focus()
     playerInput.value = null
 
@@ -80,12 +81,14 @@ inputForm.addEventListener('submit', (e)=>{
     playerInputValue = playerInput.value
     _result = calculation(number1,number2,_operation)
     if(+playerInputValue === _result){
-        result.style.borderColor = 'rgb(0, 128, 79)'
+        result.style.borderColor = '#377649'
+        result.style.backgroundColor = '#377649'
         correctSound.play()
         cCount++;
     }
     else{
-        result.style.borderColor = 'rgb(255, 0, 0)'
+        result.style.borderColor = '#A13030'
+        result.style.backgroundColor = '#A13030'
         worngSound.play()
         wCount++
     } 
@@ -102,7 +105,7 @@ inputForm.addEventListener('submit', (e)=>{
         else {
             loserSound.play()  
         }
-        container.innerHTML = `<h1><span style="color:${res >= 70 ? 'rgb(0, 128, 79)' : 'rgb(255, 0, 0)'};">${res.toFixed(0)}</span> / 100</h1>`
+        container.innerHTML = `<h1><span style="font-size:50px;color:${res >= 70 ? 'rgb(0, 128, 79)' : 'rgb(255, 0, 0)'};">${res.toFixed(0)}</span> / 100</h1>`
         playerInput.innerHTML = ''
         setTimeout(()=> location.reload(), 5000)
         return 

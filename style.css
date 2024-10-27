@@ -20,13 +20,9 @@ body{
     align-items: center;
     gap: 1rem;
 }
-@media (min-width: 768px){
-    .container{
-        height: calc(100% - 500px);
-    }
-}
+
 h2{
-    margin-top: 1rem;
+    margin-top: 2rem;
     letter-spacing: 2px;
     font-weight: 500;
     font-size: 25px;
@@ -59,6 +55,18 @@ h2{
     font-size: 30px;
     font-weight: 600;
 }
+@media (min-width: 768px){
+    .container{
+        height: calc(100% - 600px);
+    }
+    #mathProblem > div:not(#equal){
+        width: 100px;
+        height: 100px;
+    }
+    #mathProblem > div{
+        font-size: 50px;
+    }
+}
 #levels{
     width: 200px;
     display: grid;
@@ -67,21 +75,22 @@ h2{
     
 }
 .level{
-    border: 1px solid #777;
+    border: 1px solid #666;
+    padding-block: 0.35rem;
     font-size: 16px;
-    color: #777;
+    color: #666;
     cursor: pointer;
     animation: anim 1s  infinite linear;
 }
 @keyframes anim {
     0%{
-        border-color:#777;
+        border-color:#666;
     }
     50%{
         border-color:#999;
     }
     0%{
-        border-color:#777;
+        border-color:#666;
     }
 }
 .level:hover,.apply{
@@ -99,19 +108,24 @@ h2{
 }
 #resultTable p{
     font-size: 12px;
-    color: #777;
-}
+    color: #999;
 
+}
+#resultTable p span{
+    font-weight: 600;
+}
 #playerInput{
-    width: 75px;
+    width: 100px;
     height: 50px;
-    font-size: 32px;
+    font-size: 35px;
+    font-weight: 600;
     padding: 1rem;
-    border: 2px solid lightskyblue;
-    background-color: #555;
+    border: 2px solid #3075A1;
+    background-color: #333;
     outline-color: #333;
     color: white;
     text-align: center;
+    outline: none;
 }
 
 /* Chrome, Safari, Edge, Opera */
@@ -129,3 +143,4 @@ input[type=number] {
 #submitButton{
    display: none;
 }
+
